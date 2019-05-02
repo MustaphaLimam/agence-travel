@@ -1,19 +1,7 @@
 <?php
-//Connection
+require_once'condb.php';
 
-$host= "localhost";
-$user= "root";
-$password="";
-$database = "travelapp";
-
-try {
-$con = mysqli_connect($host, $user, $password, $database);
-} catch (Exception $ex){
-	echo 'Erreur';
-}
-
-//Variables 
-
+//Variables
 $Nom = $_POST['inputNom'];
 $Prenom = $_POST['inputPrenom'];
 $Sexe = $_POST['sexe'];
