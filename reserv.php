@@ -102,7 +102,7 @@ if(isset($_GET['Id'])){
     <section class="dorne-listing-destinations-area section-padding-100-50">
         <div class="container">
             <div class="row">
-                
+
                 <div class="col-12">
                     <div class="section-heading dark text-center">
                         <span></span>
@@ -134,7 +134,7 @@ if(isset($_GET['Id'])){
             </div>
             <div class="form-group col-md-6">
               <label for="inputTel">Tel</label>
-              <input type="number" class="form-control" name="inputTel" placeholder="Tel" required>
+              <input type="text" class="form-control" name="inputTel" placeholder="Tel" required>
             </div>
           </div>
           <div class="form-group">
