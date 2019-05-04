@@ -68,7 +68,6 @@
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                             </ul>
-                            dj najem
                             <!-- Search btn -->
                             <div class="dorne-search-btn">
                                 <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i>Rechercher</a>
@@ -99,7 +98,6 @@
             <div class="row">
                 <!-- Single Features Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
-                    
                     <div class="single-features-area mb-50">
                         <img src="img/bg-img/feature-1.jpg" alt="">
                         <!-- Price -->
@@ -112,15 +110,36 @@
                                 <p>Montagne</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="reserv.php"><i class="btn" aria-hidden="true">Reserver</i></a>
+                                <a href="reserv.php?Id=2"><i class="btn" aria-hidden="true">Reserver</i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Single Features Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-features-area mb-50">
                         <img src="img/bg-img/feature-2.jpg" alt="">
+                        <!-- Price -->
+                        <div class="price-start">
+                            <p>80DT</p>
+                        </div>
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                                <h5>Tozeur</h5>
+                                <p>Sahara</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <a href="reserv.php?Id=3"><i class="btn" aria-hidden="true">Reserver</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Features Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-features-area mb-50">
+                        <img src="img/bg-img/feature-3.jpg" alt="">
                         <!-- Price -->
                         <div class="price-start">
                             <p>95DT</p>
@@ -131,31 +150,12 @@
                                 <p>Mer</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="reserv.php"><i class="btn" aria-hidden="true">Reserver</i></a>
+                                <a href="reserv.php?Id=4"><i class="btn" aria-hidden="true">Reserver</i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Single Features Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-features-area mb-50">
-                        <img src="img/bg-img/feature-3.jpg" alt="">
-                        <!-- Price -->
-                        <div class="price-start">
-                            <p>80DT</p>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Tozeur</h5>
-                                <p>S0DT</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="reserv.php"><i class="btn" aria-hidden="true">Reserver</i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+           
             </div>
         </div>
     </section>

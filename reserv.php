@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 
+=======
+<?php
+require_once'condb.php';
+$ID = $_GET['Id'];
+if(isset($_GET['Id'])){
+
+    $sql= " SELECT * from circuit WHERE Id='$ID' ";
+    $res= mysqli_query($con, $sql) or die("Erreur Requete: $sql");
+    $row= mysqli_fetch_array($res);
+
+
+}else{
+    echo'Error';
+}
+?>
+>>>>>>> 8b6698e6eec358303f57cb1a1a5eacb637baeb10
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,17 +101,21 @@
     <!-- ***** Breadcumb Area Start ***** -->
     <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
     <!-- ***** Breadcumb Area End ***** -->
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8b6698e6eec358303f57cb1a1a5eacb637baeb10
 
     <!-- ***** Listing Destinations Area Start ***** -->
     <section class="dorne-listing-destinations-area section-padding-100-50">
         <div class="container">
             <div class="row">
+
                 <div class="col-12">
                     <div class="section-heading dark text-center">
                         <span></span>
-                        <h4>Reservation du circuit</h4>
+                        <h4>Reservation du circuit <?php echo $row['Cname'] ?></h4>
                     </div>
                 <div class="reserv-form">
             <form action="saveform.php" method="POST">
@@ -122,7 +143,7 @@
             </div>
             <div class="form-group col-md-6">
               <label for="inputTel">Tel</label>
-              <input type="number" class="form-control" name="inputTel" placeholder="Tel" required>
+              <input type="text" class="form-control" name="inputTel" placeholder="Tel" required>
             </div>
           </div>
           <div class="form-group">
