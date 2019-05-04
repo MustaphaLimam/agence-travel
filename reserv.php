@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,10 +81,14 @@
     </header>
     <!-- ***** Header Area End ***** -->
 
+    <!-- ***** Breadcumb Area Start ***** -->
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
+    <!-- ***** Breadcumb Area End ***** -->
+
 
 
     <!-- ***** Listing Destinations Area Start ***** -->
-    <section class="dorne-listing-destinations-area section-padding-100-50" style="background-image: url(img/bg-img/heroo-1.jpg);">
+    <section class="dorne-listing-destinations-area section-padding-100-50">
         <div class="container">
             <div class="row">
                 <div class="col-12">
