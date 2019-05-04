@@ -13,6 +13,10 @@
 
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
+      <div class="input-group">
+          <label>cin</label>
+          <input type="text" name="username" value="<?php echo $username; ?>">
+      </div>
   	<div class="input-group">
   	  <label>cin</label>
   	  <input type="text" name="cin" value="<?php echo $cin; ?>">
