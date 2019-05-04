@@ -1,18 +1,9 @@
 <?php
-<<<<<<< HEAD
+
 //Connection
 
 $host= "localhost";
-$user= "root";
-$password="";
-$database = "travelapp";
-
-try {
-$con = mysqli_connect($host, $user, $password, $database);
-} catch (Exception $ex){
-	echo 'Erreur connecton';
-}
-
+require_once'condb.php';
 //Variables
 
     $Nom = $_POST['inputNom'];
@@ -26,21 +17,11 @@ $con = mysqli_connect($host, $user, $password, $database);
     $Datearr = $_POST['inputDateA'];
     $DateD = $_POST['inputDateD'];
 
-=======
-require_once'condb.php';
 
-//Variables
-$Nom = $_POST['inputNom'];
-$Prenom = $_POST['inputPrenom'];
-$Sexe = $_POST['sexe'];
-$Adresse = $_POST['inputAddress'];
-$Cin = $_POST['inputCIN'];
-$Tel = $_POST['inputTel'];
-$Moyt = $_POST['inputMoyT'];
-$NbrPe = $_POST['member'];
-$Datearr = $_POST['inputDateA'];
-$DateD = $_POST['inputDateD'];
->>>>>>> 8b6698e6eec358303f57cb1a1a5eacb637baeb10
+
+
+
+
 
 
 

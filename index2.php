@@ -1,14 +1,14 @@
-<<<<<<< HEAD
+
 <?php
 session_start();
 
-if (!isset($_SESSION['CIN'])) {
+if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
 }
 if (isset($_GET['logout'])) {
     session_destroy();
-    unset($_SESSION['CIN']);
+    unset($_SESSION['username']);
     header("location: login.php");
 }
 ?>
@@ -37,58 +37,11 @@ if (isset($_GET['logout'])) {
     <?php endif ?>
 
     <!-- logged in user information -->
-    <?php  if (isset($_SESSION['CIN'])) : ?>
-        <p>Welcome <strong><?php echo $_SESSION['CIN']; ?></strong></p>
+    <?php  if (isset($_SESSION['username'])) : ?>
+        <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
         <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 </div>
 
 </body>
-=======
-<?php
-session_start();
-
-if (!isset($_SESSION['CIN'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: login.php');
-}
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['CIN']);
-    header("location: login.php");
-}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-<div class="header">
-    <h2>Home Page</h2>
-</div>
-<div class="content">
-    <!-- notification message -->
-    <?php if (isset($_SESSION['success'])) : ?>
-        <div class="error success" >
-            <h3>
-                <?php
-                echo $_SESSION['success'];
-                unset($_SESSION['success']);
-                ?>
-            </h3>
-        </div>
-    <?php endif ?>
-
-    <!-- logged in user information -->
-    <?php  if (isset($_SESSION['CIN'])) : ?>
-        <p>Welcome <strong><?php echo $_SESSION['CIN']; ?></strong></p>
-        <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
-</div>
-
-</body>
->>>>>>> 8b6698e6eec358303f57cb1a1a5eacb637baeb10
 </html>
