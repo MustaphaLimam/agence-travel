@@ -1,3 +1,16 @@
+<?php require_once'server.php'; ?>
+<?php
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login2.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,30 +66,30 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="home.php"><img src="img/core-img/logo.png" alt=""></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="listing2.php">Destinations</a>
+                                    <a class="nav-link" href="listing.php">Destinations</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                             </ul>
+                            <?php  if (isset($_SESSION['username'])) : ?>
                             <div class="dorne-signin-btn">
-                                <a href="login2.php">Se connecter  ou S'inscrire</a>
+                                <a href="profile.php">Welcome <?php echo $_SESSION['username']; ?></a>
                             </div>
-                            <!-- Search btn -->
-                            <div class="dorne-search-btn">
-                                <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i>Rechercher</a>
+                            <div class="dorne-signin-btn">
+                                <a href="index.php?logout='1'">Se deconnecter</a>
                             </div>
-
+                            <?php endif ?>
                         </div>
                     </nav>
                 </div>
@@ -244,6 +257,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ****** Footer Area End ****** -->
+
 
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

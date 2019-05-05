@@ -1,6 +1,6 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Destinations</title>
+    <title>S'inscrire</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -51,16 +51,16 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="home.php"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="home.php">Home <span class="sr-only"></span></a>
+                                    <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
                                 </li>
-                              
-                                    <li class="nav-item active">
+                               
+                                    <li class="nav-item">
                                     <a class="nav-link" href="listing.php">Destinations</a>
                                 </li>
                                 </li>
@@ -84,80 +84,82 @@
     <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
     <!-- ***** Breadcumb Area End ***** -->
 
+
     <!-- ***** Listing Destinations Area Start ***** -->
     <section class="dorne-listing-destinations-area section-padding-100-50">
         <div class="container">
             <div class="row">
+
                 <div class="col-12">
                     <div class="section-heading dark text-center">
                         <span></span>
-                        <h4>Destinations</h4>
+                        <h4>S'inscrire</h4>
                     </div>
-                </div>
+                <div class="reserv-form">
+            <form action="home.php" method="POST">
+                <div class="form-group">
+                      <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputCiv">Civilite</label>
+        <select class="form-control"  name="sexe" required="required" placeholder="Sexe">
+                                                <option value="homme">Homme</option>
+                                                <option value="femme">Femme</option>
+                    </select>
+                    </div>
+            <div class="form-group col-md-5">
+              <label for="inputNom">Nom</label>
+              <input type="text" class="form-control" name="nom" placeholder="Nom" required>
             </div>
-            <div class="row">
-                <!-- Single Features Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-features-area mb-50">
-                        <img src="img/bg-img/feature-1.jpg" alt="">
-                        <!-- Price -->
-                        <div class="price-start">
-                            <p>50DT</p>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Ain Draham</h5>
-                                <p>Montagne</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="reserv.php?Id=2"><i class="btn" aria-hidden="true">Reserver</i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Features Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-features-area mb-50">
-                        <img src="img/bg-img/feature-2.jpg" alt="">
-                        <!-- Price -->
-                        <div class="price-start">
-                            <p>80DT</p>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Tozeur</h5>
-                                <p>Sahara</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="reserv.php?Id=3"><i class="btn" aria-hidden="true">Reserver</i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Features Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-features-area mb-50">
-                        <img src="img/bg-img/feature-3.jpg" alt="">
-                        <!-- Price -->
-                        <div class="price-start">
-                            <p>95DT</p>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Djerba</h5>
-                                <p>Mer</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="reserv.php?Id=4"><i class="btn" aria-hidden="true">Reserver</i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           
+            <div class="form-group col-md-5">
+              <label for="inputPrenom">Prenom</label>
+              <input type="text" class="form-control" name="prenom" placeholder="Prenom" required>
             </div>
+            
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="tel">Tel</label>
+              <input type="text" class="form-control" name="tel" placeholder="Tel" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Addresse</label>
+            <input type="text" class="form-control" name="adr" placeholder="Adresse" required>
+          </div>
+          
+
+                    <div class="form-row">  
+                        <div class="form-group col-md-6">
+                          <label for="inputCIN">CIN</label>
+                          <input type="text" class="form-control" name="cin" placeholder="CIN" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputUser">Username</label>
+                          <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="form-row">  
+                        <div class="form-group col-md-6">
+                          <label for="inputmdp1">Mot de passe</label>
+                          <input type="password" class="form-control" name="password_1" placeholder="Mot de passe" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputmdp2">Verifier mot de passe</label>
+                          <input type="password" class="form-control" name="password_2" placeholder="Verifier mot de passe" required>
+                        </div>
+                    </div>
+                        <input class="btn reserv-submit" type="submit" name="reg_user" value="Register"/>
+                        
+                    
+                </div>
+                <p>Already a member? <a href="login.php">Se connecter</a></p>
+            </form>
         </div>
+    </div>
+</div>
+</div>
     </section>
     <!-- ***** Listing Destinations Area End ***** -->
 

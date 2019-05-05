@@ -51,15 +51,15 @@
             <div class="row h-100">
                 <div class="col-12 h-100">
                     <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="home.php"><img src="img/core-img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
                         <!-- Nav -->
                         <div class="collapse navbar-collapse" id="dorneNav">
                             <ul class="navbar-nav mr-auto" id="dorneMenu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="home.php">Home <span class="sr-only"></span></a>
+                                    <a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
                                 </li>
-                              
+                                
                                     <li class="nav-item active">
                                     <a class="nav-link" href="listing.php">Destinations</a>
                                 </li>
@@ -110,7 +110,7 @@
                                 <p>Montagne</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="reserv.php?Id=2"><i class="btn" aria-hidden="true">Reserver</i></a>
+                                <a href="register2.php"><i class="btn" aria-hidden="true">Reserver</i></a>
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                                 <p>Sahara</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="reserv.php?Id=3"><i class="btn" aria-hidden="true">Reserver</i></a>
+                                <a href="register2.php"><i class="btn" aria-hidden="true">Reserver</i></a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                                 <p>Mer</p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="reserv.php?Id=4"><i class="btn" aria-hidden="true">Reserver</i></a>
+                                <a href="register2.php"><i class="btn" aria-hidden="true">Reserver</i></a>
                             </div>
                         </div>
                     </div>
@@ -169,11 +169,14 @@
                     <div class="footer-text">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" ></i> by <a href="" target="_blank">Khalil Kraiem And Mustapha Limam</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" ></i> by <a href="https://www.linkedin.com/in/limam-mustapha-selim-25877b155/" target="_blank">Khalil Kraiem And Mustapha Limam</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                     <div class="footer-social-btns">
+                        <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
                         <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
                     </div>

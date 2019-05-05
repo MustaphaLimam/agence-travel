@@ -59,7 +59,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                                 </li>
-                                <a class="nav-link" href="explore.php">Explorer<span class="sr-only"></a>
                                 <li class="nav-item">
                                     <a class="nav-link" href="listing.php">Destinations</a>
                                 </li>
@@ -135,7 +134,7 @@
     </div>
     <!-- ***** Contact Area End ***** -->
 
-    <!-- ****** Footer Area Start ****** -->
+       <!-- ****** Footer Area Start ****** -->
     <footer class="dorne-footer-area">
         <div class="container-fluid">
             <div class="row">
@@ -143,14 +142,11 @@
                     <div class="footer-text">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" ></i> by <a href="https://www.linkedin.com/in/limam-mustapha-selim-25877b155/" target="_blank">Mustapha Limam</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" ></i> by <a href="" target="_blank">Khalil Kraiem And Mustapha Limam</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                     <div class="footer-social-btns">
-                        <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
                         <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
                     </div>
