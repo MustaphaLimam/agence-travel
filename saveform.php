@@ -37,7 +37,6 @@ if ($members == 2) {
 
 
 
-
 //Queries
 if ($members == 2){
 $sql="INSERT INTO personne(nom, prenom, age) VALUES ('$Nom2','$Prenom2', '$Age2'); ";}
@@ -54,10 +53,10 @@ $result = mysqli_query($con,$sql);
     $ress= mysqli_query($con, $sqls) or die("Erreur Requete: $sql");
     $rows= mysqli_fetch_array($ress);
 
-mysqli_query($con,"INSERT INTO reservation(datedep, datearr, nombrepe, cin, MoyenT) VALUES ('$DateD', '$Datearr', '$NbrPe', '$Cin', '$Moyt')");
+mysqli_query($con,"INSERT INTO reservation(datedep, datearr, nombrepe, cin, idcirc, MoyenT) VALUES ('$DateD', '$Datearr', '$NbrPe', '$Cin', '' ,'$Moyt')");
 if($result){
     echo "true" ;
-    header('location: reserved.php?Id='.$rows['Id']);
+    header('location: reserved.php?Id='.$rows['Id'].'');
 }else{
     echo "false" ;
 }

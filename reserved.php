@@ -89,41 +89,41 @@
                     <section class="dorne-listing-destinations-area section-padding-100-50">
                        <?php
 require_once'condb.php';
-require_once'server.php';
+include 'server.php';
 $idc = $_GET['Id'];
-if(isset($_GET['Id'])){
+
     $sql= " SELECT * from circuit;";
     $res= mysqli_query($con, $sql) or die("Erreur Requete: $sql");
     $row= mysqli_fetch_array($res);
 
-    $sql1= " SELECT * from reservation WHERE idcirc= ";
+    $sql1= " SELECT * from reservation";
     $res1= mysqli_query($con, $sql1) or die("Erreur Requete: $sql");
     $row1= mysqli_fetch_array($res1);
-}else{
-    echo'Error';
-}
+
+  
 ?>
                         <div class="container">
                             <div class="row">
 
                                 <div class="col-12">
-                                    <div class="section-heading dark text-center">
+                                    <div id="printableArea" >
+                                    <div  class="section-heading dark text-center">
                                         <span></span>
                                         <h4>Reservation du circuit <?php echo $row['Cname']; ?></h4>
                                     </div>
                                     <div class="reserv-form">
-                                        <form action="saveform.php" method="POST">
+                                        
                                             <div class="form-group">
                                                 <div class="form-row">
                                                 
                                                 <div class="form-group col-md-6">
-                                                        <label for="inputUsername">Username: <?php echo $_SESSION['username']; ?></label>
+                                                        <p for="inputUsername">Username: <?php echo $_SESSION['username']; ?></p>
                                                       
                                                     </div>
 
                                                 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputState">Moyen de transport: <?php echo $row1['MoyenT'] ?></label>
+                                                        <p for="inputState">Moyen de transport: <?php echo $row1['MoyenT']; ?></p>
                                             
                                                     </div>
                                                     
@@ -131,19 +131,22 @@ if(isset($_GET['Id'])){
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-control form-group col-md-6">
-                                                        <label for="date_from">De</label>
+                                                        <p for="date_from">De: <?php echo $row1['datedep']; ?></p>
                                                        
                                                     </div>
                                                     <div class="form-control form-group col-md-6">
-                                                        <label for="date_to">A</label>
+                                                        <p for="date_to">A: <?php echo $row1['datearr']; ?></p>
 
                                                     </div>
                                                 </div>
                                                 <div id="form-control customselected form-group">
-                        <label>Personnes</label>
+                        <p>Personnes: <?php echo $row1['nombrepe']; ?></p>
 
-
-                        <input class="btn reserv-submit" type="submit" value="Reserver"/>
+</div>
+</div>
+</div>
+</div>
+                        <button class="btn reserv-submit" onclick="Printer('printableArea')" value="Print">Print</button>
                     
                 </div>
             </form>
