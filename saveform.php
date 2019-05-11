@@ -50,9 +50,14 @@ $sql="INSERT INTO personne(nom, prenom, age) VALUES ('$Nom2','$Prenom2','$Age2')
 ('$Nom5','$Prenom5','$Age5'); ";}
 $result = mysqli_query($con,$sql);
 
+    $sqls= " SELECT * from circuit;";
+    $ress= mysqli_query($con, $sqls) or die("Erreur Requete: $sql");
+    $rows= mysqli_fetch_array($ress);
+
 mysqli_query($con,"INSERT INTO reservation(datedep, datearr, nombrepe, cin, MoyenT) VALUES ('$DateD', '$Datearr', '$NbrPe', '$Cin', '$Moyt')");
 if($result){
     echo "true" ;
+    header('location: reserved.php?Id='.$rows['Id']);
 }else{
     echo "false" ;
 }

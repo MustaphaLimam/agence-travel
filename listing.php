@@ -86,6 +86,11 @@
 
     <!-- ***** Listing Destinations Area Start ***** -->
     <section class="dorne-listing-destinations-area section-padding-100-50">
+                   <?php
+                    require_once 'condb.php';
+                    $sql1 = "SELECT * from circuit;";
+                    $result1 = mysqli_query($con,$sql1);
+           ?>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -96,66 +101,28 @@
                 </div>
             </div>
             <div class="row">
+                <?php while($row1 = mysqli_fetch_array($result1)){ ?>
                 <!-- Single Features Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-features-area mb-50">
                         <img src="img/bg-img/feature-1.jpg" alt="">
                         <!-- Price -->
                         <div class="price-start">
-                            <p>50DT</p>
+                            <p><?php echo $row1['Cprix']; ?>DT</p>
                         </div>
                         <div class="feature-content d-flex align-items-center justify-content-between">
                             <div class="feature-title">
-                                <h5>Ain Draham</h5>
-                                <p>Montagne</p>
+                                <h5><?php echo $row1['Cname']; ?></h5>
+                                <p><?php echo $row1['Theme']; ?></p>
                             </div>
                             <div class="feature-favourite">
-                                <a href="reserv.php?Id=2"><i class="btn" aria-hidden="true">Reserver</i></a>
+                                <a href="reserv.php?Id=<?php echo $row1['Id']; ?>"><i class="btn" aria-hidden="true">Reserver</i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+<?php } ?>
 
-                <!-- Single Features Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-features-area mb-50">
-                        <img src="img/bg-img/feature-2.jpg" alt="">
-                        <!-- Price -->
-                        <div class="price-start">
-                            <p>80DT</p>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Tozeur</h5>
-                                <p>Sahara</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="reserv.php?Id=3"><i class="btn" aria-hidden="true">Reserver</i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Features Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-features-area mb-50">
-                        <img src="img/bg-img/feature-3.jpg" alt="">
-                        <!-- Price -->
-                        <div class="price-start">
-                            <p>95DT</p>
-                        </div>
-                        <div class="feature-content d-flex align-items-center justify-content-between">
-                            <div class="feature-title">
-                                <h5>Djerba</h5>
-                                <p>Mer</p>
-                            </div>
-                            <div class="feature-favourite">
-                                <a href="reserv.php?Id=4"><i class="btn" aria-hidden="true">Reserver</i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-           
             </div>
         </div>
     </section>

@@ -1,4 +1,8 @@
-<?php include('server.php') ?>
+
+
+<?php
+require_once 'server.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>

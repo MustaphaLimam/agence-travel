@@ -1,14 +1,3 @@
-<?php
-require_once'condb.php';
-$ID = $_GET['Id'];
-if(isset($_GET['Id'])){
-    $sql= " SELECT * from circuit WHERE Id='$ID' ";
-    $res= mysqli_query($con, $sql) or die("Erreur Requete: $sql");
-    $row= mysqli_fetch_array($res);
-}else{
-    echo'Error';
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +11,7 @@ if(isset($_GET['Id'])){
 
                         <!-- Title -->
                         <title>Reservation du circuit</title>
+
                         <!-- Favicon -->
                         <link rel="icon" href="img/core-img/favicon.ico">
 
@@ -97,13 +87,29 @@ if(isset($_GET['Id'])){
 
                     <!-- ***** Listing Destinations Area Start ***** -->
                     <section class="dorne-listing-destinations-area section-padding-100-50">
+                       <?php
+require_once'condb.php';
+require_once'server.php';
+$idc = $_GET['Id'];
+if(isset($_GET['Id'])){
+    $sql= " SELECT * from circuit;";
+    $res= mysqli_query($con, $sql) or die("Erreur Requete: $sql");
+    $row= mysqli_fetch_array($res);
+
+    $sql1= " SELECT * from reservation WHERE idcirc= ";
+    $res1= mysqli_query($con, $sql1) or die("Erreur Requete: $sql");
+    $row1= mysqli_fetch_array($res1);
+}else{
+    echo'Error';
+}
+?>
                         <div class="container">
                             <div class="row">
 
                                 <div class="col-12">
                                     <div class="section-heading dark text-center">
                                         <span></span>
-                                        <h4>Reservation du circuit <?php echo $row['Cname'] ?></h4>
+                                        <h4>Reservation du circuit <?php echo $row['Cname']; ?></h4>
                                     </div>
                                     <div class="reserv-form">
                                         <form action="saveform.php" method="POST">
@@ -111,18 +117,14 @@ if(isset($_GET['Id'])){
                                                 <div class="form-row">
                                                 
                                                 <div class="form-group col-md-6">
-                                                        <label for="inputUsername">Username</label>
-                                                        <input type="text" class="form-control" name="inputCIN" placeholder="CIN" required>
+                                                        <label for="inputUsername">Username: <?php echo $_SESSION['username']; ?></label>
+                                                      
                                                     </div>
 
                                                 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputState">Moyen de transport</label>
-                                                        <select class="form-control" name="inputMoyT">
-                                                            <option value="car">Car</option>
-                                                            <option value="jeep">Jeep</option>
-                                                            <option value="avion">Avion</option>
-                                                        </select>
+                                                        <label for="inputState">Moyen de transport: <?php echo $row1['MoyenT'] ?></label>
+                                            
                                                     </div>
                                                     
 
@@ -130,23 +132,17 @@ if(isset($_GET['Id'])){
                                                 <div class="form-row">
                                                     <div class="form-control form-group col-md-6">
                                                         <label for="date_from">De</label>
-                                                        <input type="date" name="inputDateD"/>
-                                                        <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span>
-
+                                                       
                                                     </div>
                                                     <div class="form-control form-group col-md-6">
                                                         <label for="date_to">A</label>
-                                                        <input type="date" name="inputDateA"/>
-                                                        <span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span>
+
                                                     </div>
                                                 </div>
                                                 <div id="form-control customselected form-group">
                         <label>Personnes</label>
-                        <input type="number" id="member" name="member" value="2" min="2" max="5"/>
-                        <a href="#" id="filldetails" onclick="addFields()">Ajouter Personnes</a>
-                        <div>
-                         <div id="container"/>
-                        </div>
+
+
                         <input class="btn reserv-submit" type="submit" value="Reserver"/>
                     
                 </div>
