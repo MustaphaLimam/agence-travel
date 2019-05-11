@@ -1,13 +1,14 @@
 <?php require_once'server.php'; ?>
 <?php
 
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['cin'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login2.php');
 }
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
+    unset($_SESSION['cin']);
     header("location: index.php");
 }
 ?>

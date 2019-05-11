@@ -107,7 +107,7 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputmdp1">Mot de passe</label>
-                          <input type="text" class="form-control" name="password" placeholder="Mot de passe" required>
+                          <input type="password" class="form-control" name="password" placeholder="Mot de passe" required>
                         </div>
                     </div>
                 </div>

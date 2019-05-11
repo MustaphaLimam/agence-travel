@@ -1,17 +1,30 @@
 <?php
-
+include 'server.php';
 //Connection
 
 $host= "localhost";
 require_once'condb.php';
 //Variables
+$members = $_POST['member'];
 
-    $Nom = $_POST['inputNom'];
-    $Prenom = $_POST['inputPrenom'];
-    $Sexe = $_POST['sexe'];
-    $Adresse = $_POST['inputAddress'];
+if ($members == 2) {
+    $Nom2 = $_POST['perNom2'];
+    $Prenom2 = $_POST['perPrenom2'];
+    $Age2 = $_POST['perAge2'];
+} else if ($members == 3) {
+    $Nom3 = $_POST['perNom3'];
+    $Prenom3 = $_POST['perPrenom3'];
+    $Age3 = $_POST['perAge3'];
+} else if ($members == 4) {
+    $Nom4 = $_POST['perNom4'];
+    $Prenom4 = $_POST['perPrenom4'];
+    $Age4 = $_POST['perAge4'];
+} else {
+    $Nom5 = $_POST['perNom5'];
+    $Prenom5 = $_POST['perPrenom5'];
+    $Age5 = $_POST['perAge5'];
+}
     $Cin = $_POST['inputCIN'];
-    $Tel = $_POST['inputTel'];
     $Moyt = $_POST['inputMoyT'];
     $NbrPe = $_POST['member'];
     $Datearr = $_POST['inputDateA'];
@@ -26,11 +39,18 @@ require_once'condb.php';
 
 
 //Queries
-$sql="INSERT INTO client(cin, nom, prenom, adresse, tel, sexe, email, username, password) VALUES ('$Cin','$Nom','$Prenom','$Adresse','$Tel','$Sexe','','','') ;";
-//$result=mysqli_query($con,"INSERT INTO client(cin, nom, prenom, adresse, tel, sexe) VALUES ('$Cin','$Nom','$Prenom','$Adresse','$Tel','$Sexe')");
+if ($members == 2){
+$sql="INSERT INTO personne(nom, prenom, age) VALUES ('$Nom2','$Prenom2', '$Age2'); ";}
+else if ($members == 3){
+$sql="INSERT INTO personne(nom, prenom, age) VALUES ('$Nom2','$Prenom2, '$Age2') ('$Nom3','$Prenom3', '$Age3'); ";}
+else if ($members == 4){
+$sql="INSERT INTO personne(nom, prenom, age) VALUES ('$Nom2','$Prenom2', '$Age2') ('$Nom3','$Prenom3','$Age3') ('$Nom4','$Prenom4','$Age4'); ";}
+else {
+$sql="INSERT INTO personne(nom, prenom, age) VALUES ('$Nom2','$Prenom2','$Age2') ('$Nom3','$Prenom3','$Age3') ('$Nom4','$Prenom4','$Age4')
+('$Nom5','$Prenom5','$Age5'); ";}
 $result = mysqli_query($con,$sql);
 
-//mysqli_query($con,"INSERT INTO reservation(datedep, datearr, nombrepe, cin, MoyenT) VALUES ('$DateD', '$Datearr', '$NbrPe', '$Cin', '$Moyt')");
+mysqli_query($con,"INSERT INTO reservation(datedep, datearr, nombrepe, cin, MoyenT) VALUES ('$DateD', '$Datearr', '$NbrPe', '$Cin', '$Moyt')");
 if($result){
     echo "true" ;
 }else{

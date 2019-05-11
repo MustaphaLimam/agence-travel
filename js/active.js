@@ -84,15 +84,36 @@
 
 })(jQuery);
 
-function Tang(){
-    var x = document.getElementById("quantity").value;//lay gia tri cu trong text
-    if(parseInt(x) >= 0){
-        document.getElementById("quantity").value = parseInt(x) +1;// + gia tri lay dc len 1 roi gan kq vao o text
-    }
-}
-function Giam(){
-    var x = document.getElementById("quantity").value;
-    if(parseInt(x) >= 1) {
-        document.getElementById("quantity").value = parseInt(x) -1;
-    }
-}
+
+        function addFields(){
+            var number = document.getElementById("member").value;
+            var container = document.getElementById("container");
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=1;i<number;i++){
+                container.appendChild(document.createTextNode("Nom Personne " + (i+1)));
+                var input = document.createElement("input");
+                input.type = "text";
+                input.class= "form-control";
+                input.name = "perNom" + (i+1);
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+
+                container.appendChild(document.createTextNode("Prenom Personne " + (i+1)));
+                var input = document.createElement("input");
+                input.type = "text";
+                input.class= "form-control";
+                input.name = "perPrenom" + (i+1);
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+
+                container.appendChild(document.createTextNode("Age Personne " + (i+1)));
+                var input = document.createElement("input");
+                input.type = "text";
+                input.class= "form-control";
+                input.name = "perAge" + (i+1);
+                container.appendChild(input);
+                container.appendChild(document.createElement("br"));
+            }
+        }

@@ -1,14 +1,10 @@
-
 <?php
 require_once'condb.php';
 $ID = $_GET['Id'];
 if(isset($_GET['Id'])){
-
     $sql= " SELECT * from circuit WHERE Id='$ID' ";
     $res= mysqli_query($con, $sql) or die("Erreur Requete: $sql");
     $row= mysqli_fetch_array($res);
-
-
 }else{
     echo'Error';
 }
@@ -114,74 +110,13 @@ if(isset($_GET['Id'])){
                                         <form action="saveform.php" method="POST">
                                             <div class="form-group">
                                                 <div class="form-row">
-                                                    <div class="form-group col-md-2">
-                                                        <label for="inputCiv">Civilite</label>
-                                                        <select class="form-control"  name="sexe" required="required" placeholder="Sexe">
-                                                            <option value="homme">Homme</option>
-                                                            <option value="femme">Femme</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group col-md-5">
-                                                        <label for="inputNom">Nom</label>
-                                                        <input type="text" class="form-control" name="inputNom" placeholder="Nom" required>
-                                                    </div>
-                                                    <div class="form-group col-md-5">
-                                                        <label for="inputPrenom">Prenom</label>
-                                                        <input type="text" class="form-control" name="inputPrenom" placeholder="Prenom" required>
+                                                
+                                                <div class="form-group col-md-6">
+                                                        <label for="inputUsername">Username</label>
+                                                        <input type="text" class="form-control" name="inputCIN" placeholder="CIN" required>
                                                     </div>
 
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Email</label>
-                                                        <input type="email" class="form-control" name="inputEmail" placeholder="Email" required>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputTel">Tel</label>
-                                                        <input type="text" class="form-control" name="inputTel" placeholder="Tel" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputAddress">Addresse</label>
-                                                    <input type="text" class="form-control" name="inputAddress" placeholder="Adresse" required>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputState">Gouvernorat</label>
-                                                        <select id="inputState" class="form-control">
-                                                            <option selected>Gouvernorat</option>
-                                                            <option value="Ariana">Ariana</option>
-                                                            <option value="Beja">Beja</option>
-                                                            <option value="Ben Arous">Ben Arous</option>
-                                                            <option value="Bizerte">Bizerte</option>
-                                                            <option value="Gabes">Gabes</option>
-                                                            <option value="Gafsa">Gafsa</option>
-                                                            <option value="Jendouba">Jendouba</option>
-                                                            <option value="Kairouan">Kairouan</option>
-                                                            <option value="Kasserine">Kasserine</option>
-                                                            <option value="Kebili">Kebili</option>
-                                                            <option value="Kef">Kef</option>
-                                                            <option value="Mahdia">Mahdia</option>
-                                                            <option value="Mannouba">Manouba</option>
-                                                            <option value="Medenine">Medenine</option>
-                                                            <option value="Monastir">Monastir</option>
-                                                            <option value="Nabeul">Nabeul</option>
-                                                            <option value="Sfax">Sfax</option>
-                                                            <option value="Sidi Bouzid">Sidi Bouzid</option>
-                                                            <option value="Siliana">Siliana</option>
-                                                            <option value="Sousse">Sousse</option>
-                                                            <option value="Tataouine">Tataouine</option>
-                                                            <option value="Tozeur">Tozeur</option>
-                                                            <option value="Tunis">Tunis</option>
-                                                            <option value="Zaghouan">Zaghouan</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputZip">Code Postal</label>
-                                                        <input type="text" class="form-control" id="inputZip" required>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="form-row">
+                                                
                                                     <div class="form-group col-md-6">
                                                         <label for="inputState">Moyen de transport</label>
                                                         <select class="form-control" name="inputMoyT">
@@ -190,10 +125,7 @@ if(isset($_GET['Id'])){
                                                             <option value="avion">Avion</option>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputCIN">CIN</label>
-                                                        <input type="number" class="form-control" name="inputCIN" placeholder="CIN" required>
-                                                    </div>
+                                                    
 
                                                 </div>
                                                 <div class="form-row">
@@ -211,9 +143,10 @@ if(isset($_GET['Id'])){
                                                 </div>
                                                 <div id="form-control customselected form-group">
                         <label>Personnes</label>
-                        <span class="modify-qty plus" onClick="Tang()"><i class="zmdi zmdi-chevron-up"></i></span>
-                        <input type="number" name="member" id="member" value="1" min="1" max="5" class="nput-text qty text">
-                        <span class="modify-qty minus" onClick="Giam()"><i class="zmdi zmdi-chevron-down"></i></span>
+                        <input type="number" id="member" name="member" value="2" min="2" max="5"/>
+                        <a href="#" id="filldetails" onclick="addFields()">Ajouter Personnes</a>
+                        <div>
+                         <div id="container"/>
                         </div>
                         <input class="btn reserv-submit" type="submit" value="Reserver"/>
                     
